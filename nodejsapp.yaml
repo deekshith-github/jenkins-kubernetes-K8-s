@@ -27,6 +27,9 @@ kind: Service
 metadata:
   name: nodejs-app
   namespace: default
+  annotations:
+    service.beta.kubernates.io/aws-load-balancer-ssl-cert: "arn:aws:acm:us-east-1:991163287510:certificate/305ede63-0c5b-47b2-bad2-2e0bcac62452"
+    service.beta.kubernates.io/aws-load-balancer-ssl-ports: "443"
 spec:
   selector:
     app: nodejs-app
